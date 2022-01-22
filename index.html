@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criptografia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body class="fundoSite">
+    <header>
+        <div>
+            <h1>Passinho do Romano!!</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="menuEscolha">
+                <div class="menu">
+                    <select id="escolhaCod" onchange="mostraDiv(this)">
+                        <option>Escolha uma Codificação</option>
+                        <option value="cifracesaropt">Cifra de César</option>
+                        <option value="base64opt">Base64</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="conteudo">
+                <form>
+                    <div id="cifraCesar" class="corpo" style="display:none;">
+                        <p><b>Cifra de César</b><span>Digite o texto e a chave</span></p>
+                        <textarea id="frase" rows="20" cols="33" placeholder="Digite aqui!" required></textarea>
+                        <input type="number" id="chave" maxlength="2" max="999" min="1" placeholder="00" required>
+
+                        <input type="radio" id="cifraCesarCriptRadio" name="cifraCesarName" />
+                        <label for="cifraCesarCriptRadio">Codificar</label>
+
+                        <input type="radio" id="cifraCesarDecriptRadio" name="cifraCesarName" />
+                        <label for="cifraCesarDecriptRadio">Decodificar</label>
+
+                        </br><input type="submit" id="cifraCesarCript" value="Codificar Mensagem!" style="display: none;"
+                            onclick="cifraCesarCriptografar()" />
+                        <input type="submit" id="cifraCesarDecript" value="Decodificar Mensagem!" style="display: none;"
+                            onclick="cifraCesarCriptografarAlt()" />
+
+                        <div id="resultado"></div>
+                    </div>
+
+                    <div id="base64" class="corpo" style="display:none;">
+                        <p><b>Base 64</b><span>Digite o texto</span></p>
+
+                        <textarea id="fraseAlt" rows="20" cols="33" placeholder="Digite aqui!" required></textarea>
+
+                        <input type="radio" class="radiobt" id="base64criptadaRadio" name="base64">
+                        <label for="base64criptadaRadio">Codificar</label>
+
+                        <input type="radio" class="radiobt" id="base64decriptadaRadio" name="base64">
+                        <label for="base64decriptadaRadio">Decodificar</label>
+
+                        </br><input type="submit" id="base64criptada" value="Codificar Mensagem!" style="display: none;"
+                            onclick="base64cript()">
+
+                        <input type="submit" id="base64decriptada" value="Decodificar Mensagem!" style="display: none;"
+                            onclick="base64decript()">
+                        <div id="resultadoAlt"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+<footer>
+    <p class="copyright">&copy; Todos os direitos reservados. <br>
+        feito por: Guilherme Santiago de Oliveira
+    </p>
+</footer>
+
+</html>
